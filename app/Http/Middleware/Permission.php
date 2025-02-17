@@ -25,7 +25,7 @@ class Permission
         } else if (Auth::user()->role == 'staff'){
             return redirect('staff/dashboard');
         } else {
-            return redirect('administrator/dashboard');
+            return redirect('admin/dashboard');
         }
     }
 }
