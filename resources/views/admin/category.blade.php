@@ -10,50 +10,49 @@
                             {{ session('success') }}
                         </div>
                     @endif
+                    <!-- Tabel Kategori -->
+                    <div class="">
+                        <h3 class="text-xl font-semibold mb-4">Daftar Kategori</h3>
+                        <button type="button" class="btn btn-primary text-white bg-blue-500 px-4 py-2 rounded mb-6"
+                            id="openModal">
+                            Tambah Data
+                        </button>
 
-                    <button type="button" class="btn btn-primary text-white bg-blue-500 px-4 py-2 rounded" id="openModal">
-                        Tambah Data
-                    </button>
+                        <!-- Modal -->
+                        <div id="modal"
+                            class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center hidden">
+                            <div class="bg-gray-700 rounded-lg p-6 shadow-xl sm:rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <h5 class="text-lg font-semibold" id="exampleModalLabel">Tambah Kategori</h5>
+                                    <button type="button" class="text-gray-500" id="closeModal">
+                                        <span class="text-2xl">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="my-4">
+                                    <form action="{{ route('add_category') }}" method="POST">
+                                        @csrf
+                                        <div class="form flex flex-col my-5">
+                                            <label for="nama">Nama Kategori</label>
+                                            <input type="text" name="name" id="nama" placeholder="..."
+                                                class="text-black">
+                                        </div>
 
-                    <!-- Modal -->
-                    <div id="modal"
-                        class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center hidden">
-                        <div class="bg-gray-700 rounded-lg p-6 shadow-xl sm:rounded-lg">
-                            <div class="flex justify-between items-center">
-                                <h5 class="text-lg font-semibold" id="exampleModalLabel">Tambah Kategori</h5>
-                                <button type="button" class="text-gray-500" id="closeModal">
-                                    <span class="text-2xl">&times;</span>
-                                </button>
-                            </div>
-                            <div class="my-4">
-                                <form action="{{ route('add_category') }}" method="POST">
-                                    @csrf
-                                    <div class="form flex flex-col my-5">
-                                        <label for="nama">Nama Kategori</label>
-                                        <input type="text" name="name" id="nama" placeholder="..."
-                                            class="text-black">
-                                    </div>
-
-                                    <div class="flex justify-end">
-                                        <button type="submit"
-                                            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                                            id="saveChanges">
-                                            Simpan
-                                        </button>
-                                        <button type="button"
-                                            class="px-4 py-2 bg-gray-300 text-gray-700 rounded ml-2 hover:bg-gray-400"
-                                            id="closeModal2">
-                                            Kembali
-                                        </button>
-                                    </div>
-                                </form>
+                                        <div class="flex justify-end">
+                                            <button type="submit"
+                                                class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                                                id="saveChanges">
+                                                Simpan
+                                            </button>
+                                            <button type="button"
+                                                class="px-4 py-2 bg-gray-300 text-gray-700 rounded ml-2 hover:bg-gray-400"
+                                                id="closeModal2">
+                                                Kembali
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Tabel Kategori -->
-                    <div class="mt-6">
-                        <h3 class="text-xl font-semibold mb-4">Daftar Kategori</h3>
                         <table class="min-w-full bg-dark border border-gray-200 rounded-lg">
                             <thead>
                                 <tr class="bg-gray-100 text-black">
@@ -87,7 +86,8 @@
                                                     </div>
                                                     <div class="my-4">
                                                         <form id="editCategoryForm"
-                                                            action="{{ route('update_category',$category->id) }}" method="POST">
+                                                            action="{{ route('update_category', $category->id) }}"
+                                                            method="POST">
                                                             @csrf
                                                             @method('PUT')
                                                             <input type="hidden" name="id" id="categoryId">

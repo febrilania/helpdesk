@@ -17,12 +17,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('get_category.mahasiswa')" :active="request()->routeIs('get_category')">
-                        {{ __('Category') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('get_ticket.mahasiswa')" :active="request()->routeIs('get_ticket')">
+                    <x-nav-link :href="route('get_ticket.staff')" :active="request()->routeIs('get_ticket.staff')">
                         {{ __('Tiket') }}
                     </x-nav-link>
                 </div>

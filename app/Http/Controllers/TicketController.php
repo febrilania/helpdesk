@@ -29,9 +29,16 @@ class TicketController extends Controller
         return view('mahasiswa/form_ticket', compact('categories'));
     }
 
-    public function detail($id){
-        $ticket =  Ticket::findOrFail($id);
-        return view('mahasiswa/detail_ticket', compact('ticket'));
+    public function detail($id)
+    {
+        $ticket = Ticket::with(['user', 'category', 'bagian'])->findOrFail($id);
+        if (Auth::user()->role == 'mahasiswa') {
+            return view('mahasiswa/detail_ticket', compact('ticket'));
+        } else if (Auth::user()->role == 'staff') {
+            return view('staff/detail_ticket', compact('ticket'));
+        } else {
+            return view('admin/detail_ticket', compact('ticket'));
+        }
     }
 
     public function add(Request $request)
