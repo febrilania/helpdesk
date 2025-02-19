@@ -54,17 +54,18 @@
 
                     <div class="mt-6">
                         <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Respon</h3>
-                    
+
                         @if ($ticket->responses->count() > 0)
                             <div class="space-y-4">
                                 @foreach ($ticket->responses as $response)
                                     <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-md">
                                         <div class="flex justify-between items-center">
                                             <p class="text-sm text-gray-600 dark:text-gray-300">
-                                                {{ $response->user?->name ?? 'Pengguna Tidak Diketahui' }} - 
-                                                <span class="text-xs text-gray-500">{{ $response->created_at->format('d M Y, H:i') }}</span>
+                                                {{ $response->user?->name ?? 'Pengguna Tidak Diketahui' }} -
+                                                <span
+                                                    class="text-xs text-gray-500">{{ $response->created_at->timezone('Asia/Jakarta')->format('d M Y, H:i') }}</span>
                                             </p>
-                                            
+
                                         </div>
                                         <p class="mt-2 text-gray-900 dark:text-gray-100 whitespace-pre-line">
                                             {{ $response->message }}
@@ -83,7 +84,7 @@
                             class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
                             Kembali
                         </a>
-                        <a href="{{route('form_response.staff', $ticket->id)}}"
+                        <a href="{{ route('form_response.staff', $ticket->id) }}"
                             class="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-300 ease-in-out">
                             Respon
                         </a>

@@ -25,7 +25,6 @@ class TicketController extends Controller
     public function form_ticket()
     {
         $categories = Category::all();
-
         return view('mahasiswa/form_ticket', compact('categories'));
     }
 
@@ -38,6 +37,15 @@ class TicketController extends Controller
             return view('staff/detail_ticket', compact('ticket'));
         } else {
             return view('admin/detail_ticket', compact('ticket'));
+        }
+    }
+    public function edit_form_ticket($id)
+    {
+        $ticket = Ticket::with(['user', 'category', 'bagian'])->findOrFail($id);
+        if (Auth::user()->role == 'staff') {
+            return view('staff/edit_form_ticket', compact('ticket'));
+        } else {
+            return view('admin/edit_form_ticket', compact('ticket'));
         }
     }
 

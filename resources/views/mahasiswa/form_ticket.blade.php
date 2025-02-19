@@ -33,6 +33,15 @@
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
+                        {{-- <div class="mb-4">
+                            <label for="bagian" class="block text-sm font-medium text-gray-500">Bagian</label>
+                            <input type="text" name="bagian" id="bagian" placeholder="Tiket ditujukan ke bagian"
+                                class="mt-1 block w-full text-sm rounded-md shadow-sm border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                                required>
+                            @error('bagian')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div> --}}
 
                         <!-- Deskripsi -->
                         <div class="mb-4">

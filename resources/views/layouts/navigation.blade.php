@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <img src="/images/peradaban.png" alt="Logo Universitas" class="logo w-32">
                     </a>
                 </div>
 
@@ -84,6 +84,21 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('get_category')" :active="request()->routeIs('get_category')">
+                {{ __('Category') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('get_ticket.admin')" :active="request()->routeIs('get_ticket.admin')">
+                {{ __('Ticket') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('get_user')" :active="request()->routeIs('get_user')">
+                {{ __('User') }}
             </x-responsive-nav-link>
         </div>
 

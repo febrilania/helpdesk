@@ -62,9 +62,10 @@
                                                 class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">
                                                 Response
                                             </a>
-
-
-
+                                            <a href="{{route('edit_form_ticket.staff', $ticket->id)}}"
+                                                class="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">
+                                                Ubah Status
+                                            </a>
                                             <!-- Tombol Hapus -->
                                             {{-- <form action="{{ route('delete_ticket.', $ticket->id) }}" method="POST"
                                                 onsubmit="return confirm('Apakah Anda yakin ingin menghapus tiket ini?');">

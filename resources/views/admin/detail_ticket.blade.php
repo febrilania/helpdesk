@@ -80,11 +80,16 @@
 
                     <!-- Tombol Kembali dan Tombol Respon -->
                     <div class="mt-6 text-center space-x-4">
-                        <a href="{{ route('get_ticket.mahasiswa') }}"
+                        <a href="{{ route('get_ticket.admin') }}"
                             class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">
                             Kembali
                         </a>
+                        <a href="{{ route('form_response.admin', $ticket->id) }}"
+                            class="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-300 ease-in-out">
+                            Respon
+                        </a>
                     </div>
+
                 </div>
             </div>
         </div>
