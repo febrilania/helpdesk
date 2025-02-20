@@ -7,6 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Helpdesk</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

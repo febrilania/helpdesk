@@ -30,6 +30,7 @@
             margin-bottom: 20px;
         }
     </style>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
 </head>
 <body>
     <div class="container">
